@@ -1,30 +1,48 @@
 <template>
   <div>
+<b-container class="bv-example-row">
+
+  <div class="" >
+    <b-row class="text-left">
+         <b-col></b-col>
+
+         <b-col cols="10" class="bg1">
+
+
     <h1>การจองห้องประชุม</h1>
   <!--   <p><button v-on:click="logout">Logout</button></p> -->
-    <h4>จำนวนที่จอง {{ blogs.length }} </h4>
+    <h5>จำนวนที่จอง {{ blogs.length }} </h5>
+<hr>
+    <p><b-button pill variant="success" v-on:click="navigateTo('/blog/create')"> จองห้องประชุม </b-button></p>
 
-    <p><button v-on:click="navigateTo('/blog/create')"> จองห้องประชุม </button></p>
-    <div v-for="blog in blogs" v-bind:key="blog.id">
+<br>
+    <div class="box1" v-for="blog in blogs" v-bind:key="blog.id">
       <p>ลำดับ: {{ blog.id }}</p>
       <p>ชื่อ: {{ blog.firstname }}</p>
       <p>นามสกุล: {{ blog.lastname }}</p>
       <p>ชื่อห้องประชุม: {{ blog.nroom }}</p>
       <p>จำนวนผู้เข้าประชุม: {{ blog.pnum }}</p>
       <p>เบอร์โทรศัพท์: {{ blog.tel }}</p>
-      <p>วันที่เริ่มต้น: {{ blog.dates }}</p>
+      <!-- <p>วันที่เริ่มต้น: {{ blog.dates }}</p>
       <p>เวลาที่เริ่มต้น: {{ blog.times }}</p>
       <p>วันที่สิ้นสุด: {{ blog.datee }}</p>
       <p>เวลาที่สิ้นสุด: {{ blog.timee }}</p>
-      <p>อื่นๆ : {{ blog.other }}</p>
-      <p>
-        <button v-on:click="navigateTo('blog/'+blog.id)"> ตรวจสอบการจอง </button>
-        <button v-on:click="navigateTo('/blog/edit/' + blog.id)"> แก้ไขการจองห้องประชุม </button>
-        <button v-on:click="deleteBlog(blog)"> ยกเลิกการจองห้องประชุม</button>
+      <p>อื่นๆ : {{ blog.other }}</p> -->
+      <hr><p>
+        <b-button pill variant="primary" v-on:click="navigateTo('blog/'+blog.id)"> ตรวจสอบการจอง </b-button>
+        <!-- <b-button pill variant="warning" v-on:click="navigateTo('/blog/edit/' + blog.id)"> แก้ไขการจอง </b-button> -->
+        <b-button pill variant="danger" v-on:click="deleteBlog(blog)"> ยกเลิกการจอง</b-button>
       </p>
-      <hr>
+      
     </div>
     
+</b-col>
+      <b-col> </b-col>
+     </b-row>
+
+     </div>
+</b-container>
+
   </div>
 </template>
 <script>

@@ -1,7 +1,15 @@
 ﻿<template>
   <div>
+<b-container class="bv-example-row">
+    <b-row class="text-left">
+         <b-col></b-col>
+
+         <b-col cols="10" class="bg3">
+
+
     <h1>แก้ไขรีวิว {{ comment.id }}</h1>
-    <form v-on:submit.prevent="editComment">
+    <hr>
+    <form class="box3" v-on:submit.prevent="editComment">
       <p>หัวข้อ: <input type="text" v-model="comment.title" /></p>
 
 <!-- add-->
@@ -44,7 +52,7 @@
                 :src="BASE_URL + picture.name"
                 alt="picture image"
               />
-              <br />
+              <hr>
               <button v-on:click.prevent="useThumbnail(picture.name)">แสดงภาพขนาดเล็ก</button>
               <button v-on:click.prevent="delFile(picture)"> ลบรูปภาพ </button>
               
@@ -65,12 +73,20 @@
           @focus="onFocus($ecent)"
         />
       </p>
-      
+      <hr>
       <p>
-        <button type="submit">ยืนยันการแก้ไขรีวิว</button>
-        <button v-on:click="navigateTo('/comments')">ย้อนกลับ</button>
+        <b-button  pill variant="warning"  type="submit">ยืนยันการแก้ไขรีวิว</b-button>
+         <b-button pill variant="secondary" v-on:click="navigateTo('/comments')">ย้อนกลับ</b-button>
+         <br>
       </p>
     </form>
+</b-col>
+      <b-col> </b-col>
+     </b-row>
+
+</b-container>
+
+
   </div>
 </template>
 <script>
