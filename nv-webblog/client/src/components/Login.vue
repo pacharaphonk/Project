@@ -11,13 +11,13 @@
 <form v-on:submit.prevent="onLogin">
   <div class="container">
 
-    <label for="email"><b>Username</b></label>
-    <input type="text" v-model="email" placeholder="Enter Username" required>
+    <label for="email"><b>Username </b></label>
+    <input type="text" class="form-control" v-model="email" placeholder="Enter Username" required>
 
     <br>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" v-model="password" placeholder="Enter Password" required>
+    <label for="psw"><b>Password </b></label>
+    <input type="password" class="form-control" v-model="password" placeholder="Enter Password" required>
 
     <br>
 
